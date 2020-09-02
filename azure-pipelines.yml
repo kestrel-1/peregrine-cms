@@ -13,13 +13,13 @@ stages:
   displayName: Build stage
   jobs:
   - job: MavenPackageAndPublishArtifacts
-  displayName: Maven Package and Publish Artifacts
   pool:
     vmImage: $(vmImageName)
 
   steps:
   - task: Maven@3
-  inputs:
+    displayName: 'Maven Package'
+    inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'

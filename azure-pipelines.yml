@@ -10,7 +10,7 @@ stages:
     displayName: Deploy Peregrine Test
     pool:
       vmImage: 'ubuntu-latest'
-      environment: 'dev-kestrel-1.dev'
+      environment: 'dev'
       strategy:
         runOnce:
         deploy:

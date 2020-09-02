@@ -989,7 +989,7 @@
     </scm>
 
     <distributionManagement>
-        <--
+        <!--
         <repository>
             <id>peregrine.releases.https</id>
             <name>${repositoryName}</name>
@@ -1005,7 +1005,7 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
-          </repository>
+        </repository>
         <snapshotRepository>
             <id>peregrine.snapshots.https</id>
             <name>${snapshotRepositoryName}</name>

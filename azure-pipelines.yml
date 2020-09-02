@@ -15,3 +15,7 @@ steps:
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     goals: 'clean package'
+- task: Bash@3
+  inputs:
+    filePath: '/home/azureuser/test1.sh'
+    workingDirectory: '/home/azureuser'

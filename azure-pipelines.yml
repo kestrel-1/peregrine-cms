@@ -2,17 +2,27 @@
 
 trigger:
 - feature/tenantstate
+- feature/tenantstate-ci
+
+variables:
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Dev
+- stage: Build
+  displayName: Build stage
   jobs:
-  - deployment: DeployWeb
-    displayName: Deploy Peregrine Test
-    pool:
-      vmImage: 'ubuntu-latest'
-      environment: 'dev'
-      strategy:
-        runOnce:
-        deploy:
-          steps:
-          - script: echo my first deployment >> test.out
+  - job: MavenPackageAndPublishArtifacts
+  displayName: Maven Package and Publish Artifacts
+  pool:
+    vmImage: $(vmImageName)
+
+  steps:
+  - task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    goals: 'clean package'

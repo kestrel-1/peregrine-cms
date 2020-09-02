@@ -989,11 +989,23 @@
     </scm>
 
     <distributionManagement>
+        <--
         <repository>
             <id>peregrine.releases.https</id>
             <name>${repositoryName}</name>
             <url>${repositoryUrl}</url>
         </repository>
+        -->
+        <repository>
+            <id>[ORGANIZATION_NAME]</id>
+            <url>https://pkgs.dev.azure.com/kestrel1hosting/_packaging/kestrel1hosting/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+          </repository>
         <snapshotRepository>
             <id>peregrine.snapshots.https</id>
             <name>${snapshotRepositoryName}</name>

@@ -997,7 +997,7 @@
         </repository>
         -->
         <repository>
-            <id>[ORGANIZATION_NAME]</id>
+            <id>kestrel1hosting</id>
             <url>https://pkgs.dev.azure.com/kestrel1hosting/_packaging/kestrel1hosting/maven/v1</url>
             <releases>
                 <enabled>true</enabled>
@@ -1006,11 +1006,13 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        <!--
         <snapshotRepository>
             <id>peregrine.snapshots.https</id>
             <name>${snapshotRepositoryName}</name>
             <url>${snapshotRepositoryUrl}</url>
         </snapshotRepository>
+        -->
     </distributionManagement>
 
     <modules>
